@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Mencegah body scroll */
+ 
+}
+
+/* Membuat kontainer flex untuk membagi dua bagian */
+#container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 1); /* Efek bayangan halus */
+}
+
+/* Game Area - di sebelah kiri */
+#gameArea {
+  width: 60%; /* Lebar 60% dari layar */
+  height: 100%;
+  background-image: url('image/bg2.png'); /* Path gambar */
+  background-size: cover; /* Gambar memenuhi seluruh area */
+  background-position: center; /* Posisi gambar di tengah */
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 2px solid #b58b6d; /* Border pembatas */
+}
+
+/* Teks Area - di sebelah kanan */
+#textArea {
+  width: 40%;  /* Lebar 40% dari layar */
+  height: 100%;
+  background-color: #f9f5f0;  /* Warna background lebih lembut */
+  padding: 30px;
+  color: #2d2d2d;
+  overflow-y: auto;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Player dan teks yang berada di samping */
+#player {
+  position: absolute;
+  width: 80px; /* Ukuran lebih proporsional */
+  height: auto;
+  transition: all 0.2s ease; /* Smooth transition */
+  bottom: 10px;
+  left: 50px;
+}
+
+#playerText {
+  position: absolute;
+  top: 15px;
+  left: 40px; /* Posisi teks di samping pemain */
+  font-size: 18px;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#taskDisplay, #factDisplay {
+  color: #000000;
+  font-size: 17px;
+  margin-bottom: 15px;
+  
+}
+#stageText{
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f9f9f9;
+  border: 2px solid #000000; 
+  padding: 10px; 
+  background-color: #3d3329;
+  border-radius: 10px; 
+  width: fit-content; 
+  margin: 20px auto; 
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#stageText:hover{
+  transform: scale(1.1); /* Perbesar saat hover */
+  background-color: #4a3f35; /* Ubah warna latar saat hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+#TaskButton{
+  color: white;
+  background-color: #3d3329;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+#TaskButton:hover{
+  background-color: #1f1914;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+#tasksCompletedDisplay{
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #6e523b;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+.item {
+  width: 80px; /* Ukuran lebih proporsional */
+  height: 80px;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
